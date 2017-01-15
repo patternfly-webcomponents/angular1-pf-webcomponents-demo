@@ -1,0 +1,9 @@
+# Ignore Project files
+*.idea
+
+# Ignore local nodejs packages
+node_modules/
+npm-debug.log
+
+# Ignore Desktop Services Store
+.DS_Store

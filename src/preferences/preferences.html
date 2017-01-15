@@ -1,0 +1,102 @@
+<div class="container-fluid container-cards-pf apf-objects-view">
+    <div class="row">
+        <div class="col-md-12">
+            <pf-tabs tab-changed="tabChanged(event)">
+                <!-- User Settings Tab -->
+                <pf-tab tabtitle="User Settings" is-active="tabOne.active">
+                    <form>
+                        <div class="form-group">
+                            <pf-tooltip placement="right" targetselector="#firstNameLabel">
+                                {{firstNameTooltipText}}
+                            </pf-tooltip>
+                            <label id="firstNameLabel" for="first_name">First Name</label>
+                            <input type="text" class="form-control" id="first_name" value="John"/>
+                        </div>
+                        <div class="form-group">
+                            <pf-tooltip placement="right" targetselector="#lastNameLabel">
+                                Your last name.
+                            </pf-tooltip>
+                            <label id="lastNameLabel" for="last_name">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" value="Smith"/>
+                        </div>
+                        <div class="form-group">
+                            <pf-tooltip placement="right" targetselector="#address1Label">
+                                Your address.
+                            </pf-tooltip>
+                            <label id="address1Label" for="address1">Address</label>
+                            <input type="text" class="form-control" id="address1" value="1 Infinite Loop"/>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6 col-xs-12 zip-code">
+                                <pf-tooltip placement="right" targetselector="#zipLabel">
+                                    5 digit zip code.
+                                </pf-tooltip>
+                                <label id="zipLabel" for="zip5">Zip Code</label>
+                                <input type="text" class="form-control" id="zip5" value="95014"/>
+                            </div>
+                            <div class="form-group col-sm-6 col-xs-12 state-code">
+                                <pf-tooltip placement="right" targetselector="#stateLabel">
+                                    State
+                                </pf-tooltip>
+                                <label id="stateLabel" for="state">State</label>
+                                <input type="text" class="form-control" id="state" value="CA"/>
+                            </div>
+                        </div>
+                        <button class="btn btn-default">Cancel</button> &nbsp;&nbsp;
+                        <button class="btn btn-primary" ng-click="nextBtnClick()">Next</button>
+                    </form>
+                </pf-tab>
+
+                <!-- Notifications Tabs -->
+                <pf-tab tabtitle="Notification Settings" is-active="tabTwo.active">
+                    <form>
+                        <div class="row" ng-if="successAlertVisible">
+                            <div class="col-xs-12">
+                                <pf-alert type="success" ng-attr-persistent="{{isPersistent}}">
+                                    <strong>Great!</strong> We've updated your preferences now.
+                                </pf-alert>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <pf-tooltip placement="right" targetselector="#projectDescriptionLabel">
+                                Push Notifications
+                            </pf-tooltip>
+                            <label id="projectDescriptionLabel" for="push-notification-switch">Push Notifications</label>
+                            <br/>
+                            <input id="push-notification-switch" class="form-control" type="checkbox" checked/>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6 col-xs-12 zip-code">
+                                <pf-tooltip placement="right" targetselector="#phoneNumberLabel">
+                                    Phone number.
+                                </pf-tooltip>
+                                <label id="phoneNumberLabel" for="phoneNumber">Phone Number</label>
+                                <input type="text" class="form-control" id="phoneNumber" value="867-5309"/>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-default" ng-click="cancelBtnClick()">Cancel</button> &nbsp;&nbsp;
+                        <button class="btn btn-primary" ng-click="saveBtnClick()">Save</button>
+
+                        <!--<div class="row" ng-show="loading">-->
+                            <!--<div class="col-xs-12 col-sm-6">-->
+                                <!--<pf-utilization-bar-chart-->
+                                    <!--threshold-set="thresholdSet(event)"-->
+                                    <!--id="thresholdExample"-->
+                                    <!--layout="default"-->
+                                    <!--chart-title="RAM Usage"-->
+                                    <!--used="{{used}}"-->
+                                    <!--total="100"-->
+                                    <!--units="MB"-->
+                                    <!--threshold-warning="60"-->
+                                    <!--threshold-error="85">-->
+                                <!--</pf-utilization-bar-chart>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </form>
+                </pf-tab>
+            </pf-tabs>
+
+        </div>
+    </div>
+</div>
