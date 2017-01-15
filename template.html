@@ -19,6 +19,15 @@
     <link rel="stylesheet" href="bower_components/angular-patternfly-shims/dist/styles/patternfly-webcomponents.css">
     <!-- endbuild -->
 
+    <!-- Custom Element shim for Safari -->
+    <script>
+      if (typeof HTMLElement !== 'function'){
+        var _HTMLElement = function(){};
+        _HTMLElement.prototype = HTMLElement.prototype;
+        HTMLElement = _HTMLElement;
+      }
+    </script>
+
     <!-- build:css styles/css/app.css -->
     <link rel="stylesheet" href="styles/app.css"/>
     <!-- endbuild -->
